@@ -7,13 +7,11 @@
             <div class="card-name"><%= artist.name %></div>
             <div class="card-category"><%= artist.category.name %></div>
             <div class="card-description">
-              <!-- <%= artist.description %> -->
               <p><%= artist.address %></p>
             </div>
-            <!-- <div class="card-hour-rate"><%= artist.hour_rate %></div> -->
             <div class="card-public">Spectacles pour : <strong><%= artist.public.label %></strong></div>
             <img class="card-user" src="https://api.adorable.io/avatars/285/abott@adorable.png">
-            <a class="card-link" href="#" ></a>
+            <%= link_to "", artist_path(artist), class:"card-link" %>
           </div>
         </div>
       <% end %>
