@@ -1,0 +1,44 @@
+.artist_show {
+  margin-top: 50px;
+  .img_artist {
+    // img {
+    //   border-radius: 100%;
+    // }
+  }
+  .card_artist {
+    text-align: center;
+    margin-top: 30px;
+    .bloc_detail {
+      span {
+        border: 2px solid #908e86;
+        padding: 14px 17px;
+        color: #908e86;
+        border-radius: 30px;
+        i {
+          font-size: 25px;
+        }
+      }
+      .label_icon {
+        font-weight: bold;
+        font-size: 15px;
+        margin-top: 20px;
+      }
+    }
+  }
+  .card_reviews {
+    margin-top: 60px;
+    text-align: center;
+    .all_reviews {
+      margin-top: 30px;
+      .review {
+      }
+    }
+  }
+  .card_booking {
+    margin-top: 30px;
+    text-align: center;
+    .book_btn {
+
+    }
+  }
+}
