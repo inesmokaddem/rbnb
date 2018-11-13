@@ -1,1 +1,11 @@
-new artist
+<div class="container">
+  <%= simple_form_for [@artist] do |f| %>
+  <%= f.input :name %>
+  <%= f.input :description %>
+  <%= f.input :address %>
+  <%= f.input :hour_rate %>
+  <%= f.association :category %>
+  <%= f.association :public %>
+  <%= f.submit "Create Artist", class: "btn btn-primary" %>
+  <% end %>
+</div>
