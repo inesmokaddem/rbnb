@@ -1,4 +1,5 @@
 class ArtistsController < ApplicationController
+  skip_before_action :authenticate_user!, only: :index
   def index
     @artists = Artist.all
   end
@@ -17,16 +18,12 @@ class ArtistsController < ApplicationController
   end
 
   def show
-    find_artist
+    @artist = Artist.find(params[:artist_id])
     # Add show
     # Add booking form
   end
 
   private
-
-  def find_artist
-    @artist = Artist.find(params[:id])
-  end
 
   def artist_params
     params.require(:artist).permit(:name, :description, :address, :hour_rate)
