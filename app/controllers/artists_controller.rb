@@ -10,15 +10,16 @@ class ArtistsController < ApplicationController
 
   def create
     @artist = Artist.new(artist_params)
+    @artist.user = current_user
     if @artist.save
-      redirect_to artists_path(@artist), notice: 'Artist was successfully created.'
+      redirect_to artist_path(@artist), notice: 'Artist was successfully created.'
     else
       render "new"
     end
   end
 
   def show
-    @artist = Artist.find(params[:artist_id])
+    @artist = Artist.find(params[:id])
     # Add show
     # Add booking form
   end
@@ -26,7 +27,7 @@ class ArtistsController < ApplicationController
   private
 
   def artist_params
-    params.require(:artist).permit(:name, :description, :address, :hour_rate)
+    params.require(:artist).permit(:name, :description, :address, :hour_rate, :public_id, :category_id)
   end
 
 end
