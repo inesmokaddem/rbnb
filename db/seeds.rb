@@ -6,13 +6,30 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
-require 'json'
-require 'open-uri'
+
+user = User.create!(email: "ines@gmail.com", password: "secret")
 
 puts 'Creating 100 fake artists...'
+publics = ['Tous public', 'Enfants', 'Adolescents', 'Adultes']
+publics.each do |pub|
+  Public.create!(label: pub)
+end
+
+categories = ['Clown', 'Chanteur', 'Humoriste', 'Marionnettes', 'Musicien', 'Danseur', 'Mîme']
+categories.each do |category|
+  Category.create!(name: category)
+end
+
+
+
 50.times do
-  artist = Artist.new(
-    name: Faker::Artist.name
-  )
-  artist.save
+  Artist.create!(
+                name: Faker::Artist.name,
+                description: Faker::ChuckNorris.fact,
+                address: Faker::Address.street_address,
+                hour_rate: (10..100).to_a.sample,
+                category_id: (1..7).to_a.sample,
+                public_id: (1..4).to_a.sample,
+                user_id: user.id
+                )
 end

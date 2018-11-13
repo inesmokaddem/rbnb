@@ -10,8 +10,8 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
-    if @booking.save, notice: 'Booking was successfully created.'
-      redirect_to booking_path(@booking)
+    if @booking.save
+      redirect_to booking_path(@booking), notice: 'Booking was successfully created.'
     else
       render "new"
     end

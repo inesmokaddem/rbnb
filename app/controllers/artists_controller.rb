@@ -9,8 +9,8 @@ class ArtistsController < ApplicationController
 
   def create
     @artist = Artist.new(artist_params)
-    if @artist.save, notice: 'Artist was successfully created.'
-      redirect_to artists_path(@artist)
+    if @artist.save
+      redirect_to artists_path(@artist), notice: 'Artist was successfully created.'
     else
       render "new"
     end
