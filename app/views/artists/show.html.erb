@@ -1,8 +1,8 @@
-<div class="artist-banner" style="background-image: url('https://images.unsplash.com/photo-1538961333158-2a3c9bd6725f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5af9a8b73b4e76884bc444dc96533046&auto=format&fit=crop&w=3417&q=80');" >
+<div class="artist-banner" style="background-image: url('<%= cl_image_path @artist.photo %>');" >
 </div>
 <div class="container artist_show">
   <div class="img_artist">
-    <%= image_tag "chuck.jpeg" %>
+    <%= image_tag "chuck.jpg" %>
   </div>
   <div class="col-xs-8 bloc_name">
     <h1><%= @artist.name %></h1>

@@ -13,7 +13,7 @@ require 'faker'
 # Artists.destroy_all
 
 
-user = User.create!(email: "ines@gmail.com", password: "secret")
+# user = User.create!(email: "ines@gmail.com", password: "secret")
 
 publics = ['Tous public', 'Enfants', 'Adolescents', 'Adultes']
 publics.each do |pub|
@@ -26,16 +26,16 @@ categories.each do |category|
 end
 
 
-20.times do
-  Artist.create!(
-                name: Faker::Artist.name,
-                description: Faker::ChuckNorris.fact,
-                address: Faker::Address.street_address,
-                hour_rate: (10..100).to_a.sample,
-                category_id: (1..7).to_a.sample,
-                public_id: (1..4).to_a.sample,
-                user_id: user.id
-                )
-end
+# 20.times do
+#   Artist.create!(
+#                 name: Faker::Artist.name,
+#                 description: Faker::ChuckNorris.fact,
+#                 address: Faker::Address.street_address,
+#                 hour_rate: (10..100).to_a.sample,
+#                 category_id: (1..7).to_a.sample,
+#                 public_id: (1..4).to_a.sample,
+#                 user_id: user.id
+#                 )
+# end
 
 puts 'Created some fake artists...'
