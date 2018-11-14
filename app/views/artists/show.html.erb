@@ -1,6 +1,8 @@
+<div class="artist-banner" style="background-image: url('https://images.unsplash.com/photo-1538961333158-2a3c9bd6725f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=5af9a8b73b4e76884bc444dc96533046&auto=format&fit=crop&w=3417&q=80');" >
+</div>
 <div class="container artist_show">
-  <div class="col-xs-4 img_artist">
-    <%= image_tag "chuck.jpeg", height: 400, width: 300 %>
+  <div class="img_artist">
+    <%= image_tag "chuck.jpeg" %>
   </div>
   <div class="col-xs-8 bloc_name">
     <h1><%= @artist.name %></h1>
@@ -23,6 +25,14 @@
       <p class="label_icon">Price</p>
       <p><%= @artist.hour_rate%>€/heure</p>
     </div>
+  </div>
+  <div class="col-xs-12 card_about">
+    <h1>About me</h1>
+<p>Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! In a comic, you know how you can tell who the arch-villain's going to be? He's the exact opposite of the hero. And most times they're friends, like you and me! I should've known way back when... You know why, David? Because of the kids. They called me Mr Glass. </p>
+
+<h1>I gotta tell you</h1>
+<p>Well, the way they make shows is, they make one show. That show's called a pilot. Then they show that show to the people who make shows, and on the strength of that one show they decide if they're going to make more shows. Some pilots get picked and become television programs. Some don't, become nothing. She starred in one of the ones that became nothing. </p>
+
   </div>
   <div class="col-xs-12 card_booking">
     <h1>Book me!</h1>

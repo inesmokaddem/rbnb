@@ -1,9 +1,19 @@
 .artist_show {
   margin-top: 50px;
   .img_artist {
-    // img {
-    //   border-radius: 100%;
-    // }
+    position: absolute;
+    top: 13vh;
+    border-radius: 50%;
+    overflow: hidden;
+    width: 300px;
+    height: 300px;
+    border: solid white 5px;
+  }
+  .img_artist img {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    height: 300px;
   }
   .card_artist {
     text-align: center;
