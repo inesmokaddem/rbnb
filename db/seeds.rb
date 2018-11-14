@@ -1,15 +1,20 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rails db:seed command (or created alongside the database with db:setup).
-#
-# Examples:
-#
-#   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
-#   Character.create(name: 'Luke', movie: movies.first)
 require 'faker'
+
+# puts "Destroy User"
+# User.destroy_all
+#
+# puts "Destroy Public"
+# Public.destroy_all
+#
+# puts "Destroy categories"
+# Category.destroy_all
+#
+# puts "Destroy Artists"
+# Artists.destroy_all
+
 
 user = User.create!(email: "ines@gmail.com", password: "secret")
 
-puts 'Creating 100 fake artists...'
 publics = ['Tous public', 'Enfants', 'Adolescents', 'Adultes']
 publics.each do |pub|
   Public.create!(label: pub)
@@ -21,8 +26,7 @@ categories.each do |category|
 end
 
 
-
-50.times do
+20.times do
   Artist.create!(
                 name: Faker::Artist.name,
                 description: Faker::ChuckNorris.fact,
@@ -33,3 +37,5 @@ end
                 user_id: user.id
                 )
 end
+
+puts 'Created some fake artists...'
