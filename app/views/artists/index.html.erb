@@ -11,7 +11,7 @@
     <div class="row">
       <% @artists.each do |artist| %>
         <div class="col-xs-12 col-sm-4 cards-col">
-          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://picsum.photos/800/300/?random');">
+          <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path artist.photo %>');">
             <div class="card-name"><%= artist.name %></div>
             <div class="card-category"><%= artist.category.name %></div>
             <div class="card-description">
