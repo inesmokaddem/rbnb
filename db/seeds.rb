@@ -3,14 +3,15 @@ require 'faker'
 # puts "Destroy User"
 # User.destroy_all
 #
+# puts "Destroy Artists"
+Artist.destroy_all
+
 # puts "Destroy Public"
 Public.destroy_all
 #
 # puts "Destroy categories"
 Category.destroy_all
 #
-# puts "Destroy Artists"
-Artist.destroy_all
 
 
 # user = User.create!(email: "ines@gmail.com", password: "secret")
