@@ -4,13 +4,13 @@ require 'faker'
 # User.destroy_all
 #
 # puts "Destroy Public"
-# Public.destroy_all
+Public.destroy_all
 #
 # puts "Destroy categories"
-# Category.destroy_all
+Category.destroy_all
 #
 # puts "Destroy Artists"
-# Artists.destroy_all
+Artist.destroy_all
 
 
 # user = User.create!(email: "ines@gmail.com", password: "secret")
