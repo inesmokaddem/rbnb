@@ -1,0 +1,38 @@
+.list_bookings {
+  margin-top: 110px;
+  .card-booking {
+    padding: 20px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    &:hover {
+      background: #ececec;
+    }
+    .book-name {
+      h1 {
+        margin-top: 0;
+      }
+      p {
+        margin-bottom: 0;
+      }
+      a {
+        color : #000;
+        &:hover {
+          color: #000;
+          text-decoration: none;
+        }
+      }
+    }
+    .delete-booking {
+      text-align: center;
+      i {
+        font-size: 30px;
+        color: #c00;
+        &:hover {
+          font-size: 40px;
+        }
+      }
+    }
+  }
+}
