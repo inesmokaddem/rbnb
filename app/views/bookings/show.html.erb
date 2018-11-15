@@ -11,9 +11,16 @@
   end
 %>
 
-<div class="container"><h1>Congrats!</h1>
-<p>You have booked <strong><%= total_time %></strong> hour<%= plural %> for the artist <strong><%= @booking.artist.name %></strong></p>
-<p>on <strong><%= @booking.check_in.to_date.to_formatted_s(:long_ordinal) %></strong> starting time <strong><%= @booking.check_in.time.to_s(:time) %></strong></p>
-<p>to <strong><%= @booking.check_out.to_date.to_formatted_s(:long_ordinal) %></strong> ending time <strong><%= @booking.check_out.time.to_s(:time) %></strong></p>
-<p><%= @booking.artist.name %>'s hour rate is <%= @booking.artist.hour_rate %>€ X <%= total_time %> hour</p>
-<p><strong>Total price to pay is <%= total_price %>€</strong></p></div>
+<div class="container">
+  <div class="ticket">
+    <h1>Congrats!</h1>
+    <p>You have booked <strong><%= total_time %></strong> hour<%= plural %> for the artist <strong><%= @booking.artist.name %></strong></p>
+    <p>on <strong><%= @booking.check_in.to_date.to_formatted_s(:long_ordinal) %></strong> starting time <strong><%= @booking.check_in.time.to_s(:time) %></strong></p>
+    <p>to <strong><%= @booking.check_out.to_date.to_formatted_s(:long_ordinal) %></strong> ending time <strong><%= @booking.check_out.time.to_s(:time) %></strong></p>
+    <hr>
+    <p><%= @booking.artist.name %>'s hour rate is <%= @booking.artist.hour_rate %>€ X <%= total_time %> hour</p>
+    <hr>
+    <p><strong>Total price to pay is <%= total_price %>€</strong></p>
+    <img src="https://assets.gumroad.com/assets/email/email_body_bottom_receipt-0c5f3b40293533003609f67accf86f3a58f21bd6d2be70e852c965112faaad25.png" alt="" class="botom-ticket">
+  </div>
+</div>
