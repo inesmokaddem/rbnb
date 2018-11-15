@@ -22,8 +22,9 @@ class ArtistsController < ApplicationController
   def show
     @artist = Artist.find(params[:id])
     @booking = Booking.new
-    # Add show
-    # Add booking form
+    @bookings = Booking.where(artist: @artist)
+    # @reviews = @bookings.review
+    # @ratings = @booking.rating
   end
 
   private
