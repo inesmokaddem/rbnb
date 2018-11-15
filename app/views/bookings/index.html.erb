@@ -3,10 +3,12 @@
     <% @bookings.each do |booking| %>
     <div class="col-xs-12 col-md-12 card-booking">
       <div class="col-xs-12 col-md-4 book-name">
+        <%= link_to artist_path(booking.artist) do %>
         <h1><%= booking.artist.name %></h1>
         <p><%= booking.artist.category.name %></p>
         <p><%= booking.artist.public.label %></p>
-        </div>
+        <% end %>
+      </div>
       <div class="col-xs-9 col-md-6 recap-booking">
         <div class="col-xs-12 col-md-6 start-book">
           <p>on <strong><%= booking.check_in.to_date.to_formatted_s(:long_ordinal) %></strong> starting time <strong><%= booking.check_in.time.to_s(:time) %></strong></p>
@@ -15,8 +17,13 @@
           <p>to <strong><%= booking.check_out.to_date.to_formatted_s(:long_ordinal) %></strong> ending time <strong><%= booking.check_out.time.to_s(:time) %></strong></p>
         </div>
       </div>
+
       <div class="col-xs-3 col-md-2 delete-booking">
+        <%= link_to booking_path(booking),
+      method: :delete,
+      data: { confirm: "Are you sure?" } do %>
         <i class="far fa-trash-alt"></i>
+        <% end %>
       </div>
     </div>
     <% end %>

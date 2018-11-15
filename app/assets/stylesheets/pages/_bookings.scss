@@ -16,14 +16,22 @@
       p {
         margin-bottom: 0;
       }
-    }
-    .recap-booking {
-
+      a {
+        color : #000;
+        &:hover {
+          color: #000;
+          text-decoration: none;
+        }
+      }
     }
     .delete-booking {
       text-align: center;
       i {
         font-size: 30px;
+        color: #c00;
+        &:hover {
+          font-size: 40px;
+        }
       }
     }
   }
