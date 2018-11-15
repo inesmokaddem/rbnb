@@ -2,7 +2,7 @@ class ArtistsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   def index
     @artists = Artist.all
-    
+
   end
 
   def new
@@ -21,6 +21,7 @@ class ArtistsController < ApplicationController
 
   def show
     @artist = Artist.find(params[:id])
+    @booking = Booking.new
     # Add show
     # Add booking form
   end

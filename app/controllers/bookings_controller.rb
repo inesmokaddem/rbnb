@@ -10,10 +10,13 @@ class BookingsController < ApplicationController
 
   def create
     @booking = Booking.new(booking_params)
+    @booking.artist = Artist.find(params[:artist_id])
+    @booking.user = current_user
+
     if @booking.save
       redirect_to booking_path(@booking), notice: 'Booking was successfully created.'
     else
-      render "new"
+      render 'artists/show'
     end
   end
 
@@ -24,7 +27,7 @@ class BookingsController < ApplicationController
   end
 
   def booking_params
-    params.require(:booking).permit(:check_in_at, :check_out_at)
+    params.require(:booking).permit(:check_in, :check_out)
   end
 
 end
