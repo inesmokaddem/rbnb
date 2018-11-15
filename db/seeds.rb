@@ -1,7 +1,7 @@
 require 'faker'
 
 # puts "Destroy User"
-#
+
 # puts "Destroy Artists"
 Artist.destroy_all
 
@@ -37,8 +37,8 @@ end
                 public: Public.all.sample,
                 user_id: user.id
                 )
-  url = "http://static.giantbomb.com/uploads/original/9/99864/2419866-nes_console_set.png"
-  a.remote_photo_url = url
+  url = ["https://images.unsplash.com/photo-1537627856721-321efceec2a2?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=e87427673017dd0864e10939bef806ae&auto=format&fit=crop&w=2550&q=80", "https://images.unsplash.com/photo-1509330860649-160543d0d8ae?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=72053dec40958db73c87709f08dc336e&auto=format&fit=crop&w=1352&q=80", "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=9021826916c6592eb3d93e08ca076e29&auto=format&fit=crop&w=2550&q=80", "https://images.unsplash.com/photo-1510915361894-db8b60106cb1?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=b24249de4d2cc572f850669915e72df4&auto=format&fit=crop&w=2550&q=80", "https://images.unsplash.com/photo-1502710655568-ee441b74b0b9?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=342ebb2212145f5048fa50adb53064d0&auto=format&fit=crop&w=2550&q=80"]
+  a.remote_photo_url = url.sample
   a.save
 end
 
