@@ -15,7 +15,7 @@ if (mapElement) { // only build a map if there's a div#map to inject into
     new mapboxgl.Marker()
       .setLngLat([marker.lng, marker.lat])
       .addTo(map);
-  })
+  });
   if (markers.length === 0) {
     map.setZoom(1);
   } else if (markers.length === 1) {

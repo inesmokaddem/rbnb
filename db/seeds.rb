@@ -26,12 +26,13 @@ categories.each do |category|
   Category.create!(name: category)
 end
 
+address_type = ["19 Rue Poquelin Molière 33000 Bordeaux", "28 rue des bahutiers 33000 bordeaux", "30 Rue du Commandant Arnould 33000 Bordeaux", "25 Rue des Fours 33800 Bordeaux", "11 Rue Pénicaud 33300 Bordeaux"]
 
 20.times do
   a = Artist.new(
                 name: Faker::Artist.name,
                 description: Faker::ChuckNorris.fact,
-                address: Faker::Address.street_address,
+                address: address_type.sample,
                 hour_rate: (10..100).to_a.sample,
                 category: Category.all.sample,
                 public: Public.all.sample,

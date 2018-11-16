@@ -1,8 +1,15 @@
 class ArtistsController < ApplicationController
   skip_before_action :authenticate_user!, only: :index
   def index
-    @artists = Artist.all
+    # @artists = Artist.all
+    @artists = Artist.where.not(latitude: nil, longitude: nil)
 
+    @markers = @artists.map do |artist|
+      {
+        lng: artist.longitude,
+        lat: artist.latitude
+      }
+    end
   end
 
   def new
