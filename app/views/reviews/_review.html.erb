@@ -1,6 +1,6 @@
   <div class="col-xs-12 form_review">
     <h1>Write you Review</h1>
-    <%= simple_form_for [@booking] do |f| %>
+    <%= simple_form_for [@lastbooking] do |f| %>
     <%= f.input :review %>
     <%= f.input :rating, collection: 1..5 %>
     <%= f.submit "Confirm Review", class: "btn btn-success" %>

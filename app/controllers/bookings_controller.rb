@@ -13,7 +13,7 @@ class BookingsController < ApplicationController
     @booking.user = current_user
 
     if @booking.save
-      redirect_to booking_path(@booking), notice: 'Booking was successfully created.'
+      redirect_to artist_path(@booking.artist), notice: 'Booking was successfully created.'
     else
       render 'artists/show'
     end

@@ -4,45 +4,41 @@
   <div class="img_artist">
     <%= image_tag "chuck.jpg" %>
   </div>
-  <div class="col-xs-8 bloc_name">
+  <div class="col-xs-12 bloc_name">
     <h1><%= @artist.name %></h1>
     <h4><%= @artist.category.name %></h4>
     <h4><%= @artist.public.label %></h4>
   </div>
   <div class="col-xs-12 card_artist">
-    <div class="col-xs-4 bloc_detail">
-      <span><i class="far fa-address-book"></i></span>
-      <p class="label_icon">Description</p>
-      <p><%= @artist.description%></p>
-    </div>
-    <div class="col-xs-4 bloc_detail">
+    <div class="col-xs-6 bloc_detail">
       <span><i class="fas fa-map-marker-alt"></i></span>
       <p class="label_icon">Address</p>
       <p><%= @artist.address%></p>
     </div>
-    <div class="col-xs-4 bloc_detail">
+    <div class="col-xs-6 bloc_detail">
       <span><i class="fas fa-dollar-sign"></i></span>
       <p class="label_icon">Price</p>
       <p><%= @artist.hour_rate%>€/heure</p>
     </div>
   </div>
   <div class="col-xs-12 card_about">
-    <h1>About me</h1>
-<p>Now that we know who you are, I know who I am. I'm not a mistake! It all makes sense! In a comic, you know how you can tell who the arch-villain's going to be? He's the exact opposite of the hero. And most times they're friends, like you and me! I should've known way back when... You know why, David? Because of the kids. They called me Mr Glass. </p>
+    <div class="col-xs-6 bloc_detail">
+      <h1>Description</h1>
+      <p><%= @artist.description%></p>
+    </div>
+    <div id="reviews" class="col-xs-6" >
+      <% if @lastbooking %>
+      <%= render 'bookings/show' %>
+      <% else %>
+        <h3> Book this artist! </h3>
+        <div class="form_booking">
+        <%= simple_form_for [@artist, @booking] do |f| %>
+        <%= f.input :check_in, as: :datetime, html5: true %>
+        <%= f.input :check_out, as: :datetime, html5: true %>
+        <%= f.submit "Confirm booking", class: "btn btn-success" %>
+        <% end %>
+        </div>
+      <% end %>
+    </div>
   </div>
-  <div class="col-xs-12 card_booking">
-    <h1>Book me!</h1>
-    <p>Form here to book an artist</p>
-    <button type="button" name="button" class="book_btn btn btn-primary">Book now</button>
-  </div>
-
-  <div class="col-xs-12 form_booking">
-    <%= simple_form_for [@artist, @booking] do |f| %>
-    <%= f.input :check_in, as: :datetime, html5: true %>
-    <%= f.input :check_out, as: :datetime, html5: true %>
-    <%= f.submit "Confirm booking", class: "btn btn-success" %>
-    <% end %>
-  </div>
-
-
 </div>
