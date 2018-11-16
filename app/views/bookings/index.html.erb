@@ -1,14 +1,27 @@
+
+
+
 <div class="container list_bookings">
   <div class="row">
     <h1>My Bookings</h1>
     <% @bookings.each do |booking| %>
     <div class="col-xs-12 col-md-12 card-booking">
-      <div class="col-xs-12 col-md-4 book-name">
+      <div class="col-xs-12 col-md-3 book-name">
+
+        <% start_time = booking.check_in.time.to_s(:time).to_i %>
+        <% end_time = booking.check_out.time.to_s(:time).to_i %>
+        <% total_time = end_time - start_time %>
+        <% hour_rate = booking.artist.hour_rate %>
+        <% total_price = total_time * hour_rate %>
+
         <%= link_to artist_path(booking.artist) do %>
         <h1><%= booking.artist.name %></h1>
         <p><%= booking.artist.category.name %></p>
         <p><%= booking.artist.public.label %></p>
         <% end %>
+      </div>
+      <div class="col-xs-12 col-md-2 book-name">
+        <p><strong>Amount due:<br> <%= total_price %>€</strong></p>
       </div>
       <div class="col-xs-9 col-md-6 recap-booking">
         <div class="col-xs-12 col-md-6 start-book">
