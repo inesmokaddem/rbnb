@@ -1,0 +1,13 @@
+.artist-marker {
+  padding: 0 40px;
+  p {
+    font-size: 16px;
+  }
+  .btn-show {
+    background: #000;
+    color: #fff;
+    &:hover {
+      background: #827a7a;
+    }
+  }
+}

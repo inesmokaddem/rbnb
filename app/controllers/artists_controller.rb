@@ -7,7 +7,8 @@ class ArtistsController < ApplicationController
     @markers = @artists.map do |artist|
       {
         lng: artist.longitude,
-        lat: artist.latitude
+        lat: artist.latitude,
+        infoWindow: { content: render_to_string(partial: "/artists/map_window", locals: { artist: artist }) }
       }
     end
   end

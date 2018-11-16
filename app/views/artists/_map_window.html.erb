@@ -1,0 +1,7 @@
+
+<div class="artist-marker">
+  <h4><%= artist.name %></h4>
+  <p>Category: <%= artist.category.name %></p>
+  <p>Public: <%= artist.public.label %></p>
+  <%= link_to "See artist", artist_path(artist), class: "btn btn-show"%>
+</div>
