@@ -36,13 +36,11 @@
     <button type="button" name="button" class="book_btn btn btn-primary">Book now</button>
   </div>
 
-  <div class="col-xs-12 form_booking">
+  <div class="col-xs-12 form_booking form-wrappe" style="width: 400px; margin: 0 auto;">
     <%= simple_form_for [@artist, @booking] do |f| %>
-    <%= f.input :check_in, as: :datetime, html5: true %>
-    <%= f.input :check_out, as: :datetime, html5: true %>
+    <%= f.input :check_in, as: :string, required: false, input_html: {class: "datepicker", id: "range_start"} %>
+    <%= f.input :check_out, as: :string, required: false, input_html: {class: "datepicker", id: "range_end" } %>
     <%= f.submit "Confirm booking", class: "btn btn-success" %>
     <% end %>
   </div>
-
-
 </div>
