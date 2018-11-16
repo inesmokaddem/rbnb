@@ -22,9 +22,7 @@ class ArtistsController < ApplicationController
   def show
     @artist = Artist.find(params[:id])
     @booking = Booking.new
-    @bookings = Booking.where(artist: @artist)
-    # @reviews = @bookings.review
-    # @ratings = @booking.rating
+    @lastbooking = Booking.where(user: current_user, artist: @artist).last
   end
 
   private
