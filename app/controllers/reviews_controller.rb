@@ -2,7 +2,7 @@ class ReviewsController < ApplicationController
   def create
     @booking = Booking.find(params[:id])
     @booking.update(review_params)
-    redirect_to booking_path(@booking)
+    redirect_to artist_path(@booking.artist)
   end
 
   private
