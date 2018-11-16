@@ -13,17 +13,18 @@
 
 <div class="container">
   <div class="ticket">
+    <%= image_tag("top-ticket.jpg", class: "top-ticket") %>
     <h1>Congrats!</h1>
-    <p>You have booked <strong><%= total_time %></strong> <%= "hour".pluralize %> for the artist <strong><%= @lastbooking.artist.name %></strong></p>
-    <p>on <strong><%= @lastbooking.check_in.to_date.to_formatted_s(:long_ordinal) %></strong> starting time <strong><%= @lastbooking.check_in.time.to_s(:time) %></strong></p>
-    <p>to <strong><%= @lastbooking.check_out.to_date.to_formatted_s(:long_ordinal) %></strong> ending time <strong><%= @lastbooking.check_out.time.to_s(:time) %></strong></p>
+    <p>You have booked <strong><%= total_time %></strong> <%= "hour".pluralize %> <br>for the artist <strong><%= @lastbooking.artist.name %></strong></p>
+    <p>on <strong><%= @lastbooking.check_in.to_date.to_formatted_s(:long_ordinal) %></strong> <br>starting time <strong><%= @lastbooking.check_in.time.to_s(:time) %></strong></p>
+    <p>to <strong><%= @lastbooking.check_out.to_date.to_formatted_s(:long_ordinal) %></strong> <br>ending time <strong><%= @lastbooking.check_out.time.to_s(:time) %></strong></p>
     <hr>
     <p><%= @lastbooking.artist.name %>'s hour rate is <%= @lastbooking.artist.hour_rate %>€ X <%= total_time %> hour</p>
     <hr>
     <p><strong>Total price to pay is <%= total_price %>€</strong></p>
-    <img src="https://assets.gumroad.com/assets/email/email_body_bottom_receipt-0c5f3b40293533003609f67accf86f3a58f21bd6d2be70e852c965112faaad25.png" alt="" class="botom-ticket">
+    <%= image_tag("bottom-ticket.jpg", class: "bottom-ticket") %>
   </div>
-  <%= @lastbooking.review %>
-  <%= @lastbooking.rating %>
-  <%= render "reviews/review" if @lastbooking.review.nil? %>
+  <div class="col-xs-12 col-md-6">
+    <%= render "reviews/review" if @lastbooking.review.nil? %>
+  </div>
 </div>
