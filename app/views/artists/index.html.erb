@@ -18,13 +18,13 @@
               <p><%= artist.address %></p>
             </div>
             <div class="card-public">Spectacles pour : <strong><%= artist.public.label %></strong></div>
-            <img class="card-user" url('<%= cl_image_tag artist.avatar %>')>
+            <%= cl_image_tag(artist.avatar, class:"card-user") %>
             <%= link_to "", artist_path(artist), class:"card-link" %>
           </div>
         </div>
       <% end %>
     </div>
     <div class="map_artist">
-      <div id="map" style="width: 100%; height: 600px; "data-markers="<%= @markers.to_json %>"></div>
+      <div id="map" style="width: 100%; height: 600px; 'data-markers='<%= @markers.to_json %>"></div>
     </div>
 </div>
