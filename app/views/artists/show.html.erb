@@ -2,7 +2,7 @@
 </div>
 <div class="container artist_show">
   <div class="img_artist">
-    <%= image_tag "chuck.jpg" %>
+    <img class="profile_avatar" url('<%= cl_image_tag @artist.avatar %>')>
   </div>
   <div class="col-xs-12 bloc_name">
     <h1><%= @artist.name %></h1>
